@@ -23,6 +23,19 @@ export const download = (url) => {
     return true;
 }
 
+// 获取文件后缀名
+const getExt = function(filename) {
+    if (typeof filename == 'string') {
+        return filename
+            .split('.')
+            .pop()
+            .toLowerCase()
+    } else {
+        throw new Error('filename must be a string type')
+    }
+}
+
 export {
-  download //根据url下载文件
+  download, //根据url下载文件
+  getExt // 获取文件后缀
 }

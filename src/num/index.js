@@ -191,7 +191,16 @@ const changeToChinese = function (Num) {
     return newchar;
 }
 
+// 保留到小数点以后n位
+const cutNumber = function (number, no = 2) {
+    if (typeof number != 'number') {
+        number = Number(number)
+    }
+    return Number(number.toFixed(no))
+}
+
 export {
   numberToChinese, // 阿拉伯数组转换成中文
-  changeToChinese  // 数组转换成金额
+  changeToChinese,  // 数组转换成金额
+  cutNumber // 保留小数点以后几位
 }
