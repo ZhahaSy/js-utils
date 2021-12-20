@@ -1,3 +1,5 @@
+import { AesCrypto } from './numberDecimal'
+
 // 将阿拉伯数字翻译成中文的大写数字
 const numberToChinese = function (num) {
     var AA = new Array("零", "一", "二", "三", "四", "五", "六", "七", "八", "九", "十");
@@ -202,5 +204,6 @@ const cutNumber = function (number, no = 2) {
 export {
   numberToChinese, // 阿拉伯数组转换成中文
   changeToChinese,  // 数组转换成金额
-  cutNumber // 保留小数点以后几位
+  cutNumber, // 保留小数点以后几位
+  AesCrypto // AES加密算法
 }

@@ -1,14 +1,15 @@
-import type from './type/index.js'
-import reg from './reg/index.js'
-import env from './env/index.js'
-import dom from './dom/index.js'
-import bom from  './bom/index'
-import DataProcess from  './Data Processing/index'
-import utils from  './utils/index'
-import str from  './str/index'
-import num from  './num/index'
-import file from  './file/index'
-import func from  './func/index'
+import type from './src/type/index.js'
+import reg from './src/reg/index.js'
+import env from './src/env/index.js'
+import dom from './src/dom/index.js'
+import bom from  './src/bom/index'
+import DataProcess from  './src/Data Processing/index'
+import utils from  './src/utils/index'
+import str from  './src/str/index'
+import num from  './src/num/index'
+import file from  './src/file/index'
+import func from  './src/func/index'
+import bus from  './src/bus/index'
 export {
   // 类型检查
   type,
@@ -19,5 +20,8 @@ export {
   DataProcess,
   utils,
   str,
-  func
+  num,
+  file,
+  func,
+  bus
 }

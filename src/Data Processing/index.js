@@ -1,4 +1,4 @@
-import {isArray} from'../type/index.js'
+import {typeOf, isArray} from'../type/index.js'
 
 // 数组随机打乱算法
 const shuffle = function (arr) {
@@ -131,6 +131,34 @@ const isObjectEqual = (a, b) => {
         }
     }
     return true;
+}
+
+// 数据扁平化
+function flatten(arr) {
+    var result = [];
+    if (typeof arr !== 'object' || arr === null) {
+      return arr
+    } else if (typeOf(arr)  === 'Array') {
+      for (var i = 0, len = arr.length; i < len; i++) {
+        let item = arr[i]
+        if (typeof item === 'object' && item !== null) {
+            result = result.concat(flatten(item))
+        } else {
+            result.push(item)
+        }
+      }
+    } else if (typeOf(arr) === 'Object') {
+      for (let key in arr) {
+        let item = arr[key]
+        if (typeof item === 'object' && item !== null) {
+            result = result.concat(flatten(item))
+        } else {
+            result.push(item)
+        }
+      }
+    }
+
+    return result;
 }
 
 export {

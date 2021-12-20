@@ -1,62 +1,66 @@
 // js类型 ： String Number Boolean undefiend null Object Array Function promise
+var typeOf = function (val) {
+  return Object.prototype.toString.call(val).slice(8, -1)
+}
+
 var isString = function (val) {
-  return Object.prototype.toString.call(val).slice(8,-1) === 'String';
+  return typeOf(val) === 'String';
 }
 
 var isNumber = function (val) {
-  return Object.prototype.toString.call(val).slice(8,-1) === 'Number';
+  return typeOf(val) === 'Number';
 }
 
 var isBoolean = function (val) {
-  return Object.prototype.toString.call(val).slice(8,-1) === 'Boolean';
+  return typeOf(val) === 'Boolean';
 }
 
 var isFunction = function (val) {
-  return Object.prototype.toString.call(val).slice(8,-1) === 'Function';
+  return typeOf(val) === 'Function';
 }
 
 var isNull = function (val) {
-  return Object.prototype.toString.call(val).slice(8,-1) === 'Null';
+  return typeOf(val) === 'Null';
 }
 
 var isUndefiend = function (val) {
-  return Object.prototype.toString.call(val).slice(8, -1) === 'Undefined';
+  return typeOf(val) === 'Undefined';
 }
 
 var isObject = function (val) {
-  return Object.prototype.toString.call(val).slice(8, -1) === 'Object';
+  return typeOf(val) === 'Object';
 }
 
 var isArray = function (val) {
-  return Object.prototype.toString.call(val).slice(8, -1) === 'Array';
+  return typeOf(val) === 'Array';
 }
 
 var isPromise = function (val) {
-    return Object.prototype.toString.call(val).slice(8, -1) === 'Promise'
+    return typeOf(val) === 'Promise'
 }
 
 var isMap = function (val) {
-  return Object.prototype.toString.call(val).slice(8, -1) === 'Map';
+  return typeOf(val) === 'Map';
 }
 
 var isSet = function (val) {
-  return Object.prototype.toString.call(val).slice(8, -1) === 'isSet';
+  return typeOf(val) === 'isSet';
 }
 
 var isSymbol = function (val) {
-  return Object.prototype.toString.call(val).slice(8, -1) === 'Symbol';
+  return typeOf(val) === 'Symbol';
 }
 
 var isRegExp = function (val) {
-    return Object.prototype.toString.call(val).slice(8, -1) === 'RegExp'
+    return typeOf(val) === 'RegExp'
 }
 
 var isDate = function (val) {
-    return Object.prototype.toString.call(val).slice(8, -1) === 'Date'
+    return typeOf(val) === 'Date'
 }
 
 var isError = function (val) {
-    return Object.prototype.toString.call(val).slice(8, -1) === 'Error'
+    return typeOf(val) === 'Error'
 }
 
 export default {
@@ -74,5 +78,6 @@ export default {
   isSymbol, // Symbol - 数据类型校验
   isRegExp, // RegExp - 数据类型校验
   isDate, // Date - 数据类型校验
-  isError // Error - 数据类型校验
+  isError, // Error - 数据类型校验
+  typeOf // 获取数据类型值
 }

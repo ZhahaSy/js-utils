@@ -20,14 +20,15 @@ const sleep = export function sleep(ms) {
 }
 
 // 深拷贝
-const deepCopy = function (obj) {
-    if (typeof obj != 'object') {
-        return obj
+function deepClone(obj) {
+    if (typeof obj !== 'object') return;
+    var newObj = obj instanceof Array ? [] : {};
+    for (var key in obj) {
+        if (obj.hasOwnProperty(key)) {
+            newObj[key] = typeof obj[key] === 'object' ? deepClone(obj[key]) : obj[key];
+        }
     }
-    if (obj == null) {
-        return obj
-    }
-    return JSON.parse(JSON.stringify(obj))
+    return newObj;
 }
 
 // 对象转FormData
@@ -49,6 +50,6 @@ const getFormData = function (object) {
 export {
   uuid, // 生成随机数
   sleep, // 休眠 阻塞程序执行
-  deepCopy, // 深拷贝
+  deepClone, // 深拷贝
   getFormData // 对象转FormData
 }
