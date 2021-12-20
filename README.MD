@@ -1,5 +1,8 @@
 @email: zhaha_1122@163.com
 
+项目引入方法
+npm i js-utils_haha
+
 # js-utils
 
 ``This is a library of Javascript tools，I created it for the purpose of summarizing the common methods I used to work, so as to avoid being lost when I use it in the future。``
